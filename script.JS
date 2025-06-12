@@ -1,11 +1,27 @@
-document.getElementById("generate-btn").addEventListener("click", function() {
-  let title = prompt("Titre de la page ?");
-  let text = prompt("Texte de la page ?");
-  let image = prompt("URL de l'image ?");
-  let link = prompt("Lien ?");
-  let keywords = prompt("Mots clefs ?");
-  let icon = prompt("URL de l'icône de la page ?");
-  let htmlCode = `<!DOCTYPE html>
+
+function sanitiserPrompt(input) {
+    return typeof input === "string" && input.length <= 20;
+  }
+
+  function getValidPrompt(message) {
+    let value;
+    do {
+      value = prompt(message);
+      if (!sanitiserPrompt(value)) {
+        alert("Entrée invalide. 20 caractères max.");
+      }
+    } while (!sanitiserPrompt(value));
+    return value;
+  }
+
+  document.getElementById("generate-btn").addEventListener("click", function() {
+    let title = getValidPrompt("Titre de la page ?");
+    let text = getValidPrompt("Texte de la page ?");
+    let keywords = getValidPrompt("Mots clefs ?");
+    let image = prompt("URL de l'image ?");
+    let link = prompt("Lien ?");
+    let icon = prompt("URL de l'icône de la page ?");
+    let htmlCode = `<!DOCTYPE html>
 <html>
   <head>
     <title>${title}</title>
