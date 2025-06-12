@@ -27,35 +27,35 @@ function isValidURL(str) {
   }
 }
 
-document.getElementById("generate-btn").onclick = function() {
-  let title = escapeHTML(prompt("Titre de la page ?") || "");
-  let heroText = escapeHTML(prompt("Texte de la section hero ?") || "");
+document.getElementById("generate-btn").onclick = function () {
+  let title = escapeHTML((prompt("Titre de la page ?") || "").substring(0, 100));
+  let heroText = escapeHTML((prompt("Texte de la section hero ?") || "").substring(0, 100));
 
-  let heroImageInput = prompt("URL de l'image de fond de la section hero ?");
+  let heroImageInput = (prompt("URL de l'image de fond de la section hero ?") || "").substring(0, 100);
   let heroImage = isValidURL(heroImageInput) ? escapeAttr(heroImageInput) : "";
 
-  let serviceTitle = escapeHTML(prompt("Titre de la section services ?") || "");
-  let serviceText1 = escapeHTML(prompt("Texte du service 1 ?") || "");
+  let serviceTitle = escapeHTML((prompt("Titre de la section services ?") || "").substring(0, 100));
+  let serviceText1 = escapeHTML((prompt("Texte du service 1 ?") || "").substring(0, 100));
 
-  let serviceImage1Input = prompt("URL de l'image du service 1 ?");
+  let serviceImage1Input = (prompt("URL de l'image du service 1 ?") || "").substring(0, 100);
   let serviceImage1 = isValidURL(serviceImage1Input) ? escapeAttr(serviceImage1Input) : "";
 
-  let serviceText2 = escapeHTML(prompt("Texte du service 2 ?") || "");
+  let serviceText2 = escapeHTML((prompt("Texte du service 2 ?") || "").substring(0, 100));
 
-  let serviceImage2Input = prompt("URL de l'image du service 2 ?");
+  let serviceImage2Input = (prompt("URL de l'image du service 2 ?") || "").substring(0, 100);
   let serviceImage2 = isValidURL(serviceImage2Input) ? escapeAttr(serviceImage2Input) : "";
 
-  let serviceText3 = escapeHTML(prompt("Texte du service 3 ?") || "");
+  let serviceText3 = escapeHTML((prompt("Texte du service 3 ?") || "").substring(0, 100));
 
-  let serviceImage3Input = prompt("URL de l'image du service 3 ?");
+  let serviceImage3Input = (prompt("URL de l'image du service 3 ?") || "").substring(0, 100);
   let serviceImage3 = isValidURL(serviceImage3Input) ? escapeAttr(serviceImage3Input) : "";
 
-  let contactText = escapeHTML(prompt("Texte de la section contact ?") || "");
+  let contactText = escapeHTML((prompt("Texte de la section contact ?") || "").substring(0, 100));
 
-  let iconInput = prompt("URL de l'icône de la page ?");
+  let iconInput = (prompt("URL de l'icône de la page ?") || "").substring(0, 100);
   let icon = isValidURL(iconInput) ? escapeAttr(iconInput) : "";
 
-  let keywords = escapeHTML(prompt("Mots clefs ?") || "");
+  let keywords = escapeHTML((prompt("Mots clefs ?") || "").substring(0, 100));
 
   let htmlCode = `<!DOCTYPE html>
 <html lang="fr">
